@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String?
+  email String @unique
+  emailVerified DateTime? 
+  hashedPassword String?
+  role Role @default(USER)
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+  deletedAt DateTime?
+  attendanceLog AttendanceLog[]
+  company Company? @relation(fields: [companyId], references: [id], onDelete:Cascade)
+  companyId String? @db.ObjectId
+}
+
+model AttendanceLog {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  clockIn DateTime
+  clockOut DateTime?
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @db.ObjectId
+}
+
+model Company {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  address String
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+  deletedAt DateTime?
+  user User[]
+}
+enum Role {
+  USER
+  ADMIN
+  SUPERADMIN
+}
