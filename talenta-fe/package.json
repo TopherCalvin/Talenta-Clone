@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -24,16 +25,19 @@
     "cloudinary": "^1.40.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "formik": "^2.4.4",
     "framer-motion": "^10.16.4",
     "next": "13.4.19",
     "next-auth": "^4.23.1",
     "postcss": "8.4.29",
-    "prisma": "^5.3.0",
+    "prisma": "^5.3.1",
     "query-string": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "yup": "^1.2.0",
+    "yup-password": "^0.2.2"
   }
 }

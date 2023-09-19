@@ -11,11 +11,11 @@ datasource db {
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) @map("_id") @db.ObjectId
   name String?
   email String @unique
   avatarUrl String?
-  hashedPassword String?
+  hashedPassword String
   role Role @default(USER)
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
@@ -26,7 +26,7 @@ model User {
 }
 
 model AttendanceLog {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) @map("_id") @db.ObjectId
   clockIn DateTime
   clockOut DateTime?
   createdAt DateTime? @default(now())
@@ -36,7 +36,7 @@ model AttendanceLog {
 }
 
 model Company {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) @map("_id") @db.ObjectId
   name String
   address String
   createdAt DateTime? @default(now())
