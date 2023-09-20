@@ -15,6 +15,7 @@ model User {
   name String?
   email String @unique
   avatarUrl String?
+  address String?
   hashedPassword String
   role Role @default(USER)
   createdAt DateTime? @default(now())

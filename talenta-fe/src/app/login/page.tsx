@@ -28,22 +28,21 @@ export default function Login() {
       email: Yup.string()
         .email("Enter a valid email address")
         .required("Email is required"),
-      password: Yup.string()
-        .min(8, "Password must be at least 8 characters long")
-        .minUppercase(1, "Password must contain at least 1 uppercase letter")
-        .minNumbers(1, "Password must contain at least 1 number")
-        .required("Password is required"),
+      password: Yup.string().required("Password is required"),
+      // .min(8, "Password must be at least 8 characters long")
+      // .minUppercase(1, "Password must contain at least 1 uppercase letter")
+      // .minNumbers(1, "Password must contain at least 1 number")
     }),
     onSubmit: (): void => {
       try {
         setIsLoading(true);
         signIn("credentials", { ...formik.values, redirect: false }).then(
           (callback) => {
-            if (callback?.ok) {
+            if (callback?.error) {
+              console.log(callback);
+            } else {
               router.refresh();
               router.push("/");
-            } else if (callback?.error) {
-              throw new Error("Wrong Credentials");
             }
           }
         );
