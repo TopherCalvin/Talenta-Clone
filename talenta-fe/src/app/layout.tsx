@@ -5,6 +5,7 @@ import { Providers } from "../providers";
 import Navbar from "./analytics/components/navbar";
 import { getServerSession } from "next-auth";
 import SessionProvider from "./analytics/components/sessionProvider";
+import { Box } from "@chakra-ui/react";
 const poppins = Poppins({
   weight: "400",
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default async function RootLayout({
       <body className={`${poppins.className} bg-[#f2f2f3ff]`}>
         <SessionProvider session={session}>
           <Providers>
-            {children}
+            <Box className="w-full h-[100vh] overflow-auto pb-20">
+              {children}
+            </Box>
             <Navbar />
           </Providers>
         </SessionProvider>

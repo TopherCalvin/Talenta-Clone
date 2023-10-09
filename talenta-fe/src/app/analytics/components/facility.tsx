@@ -44,7 +44,7 @@ export default function Facility() {
               <SwiperSlide>
                 <Flex
                   minW={"100px"}
-                  className="flex-col items-center justify-center h-[110px] gap-2 text-[10px]"
+                  className="flex-col items-center justify-center h-full gap-2 text-[10px]"
                 >
                   <Icon as={fac.logo} className="text-2xl" color={fac.color} />
                   <Box>{fac.name}</Box>

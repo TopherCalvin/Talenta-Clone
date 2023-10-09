@@ -4,13 +4,13 @@
 
 .swiper {
   width: 100%;
-  max-width: 500px;
-  height: 220px;
+  max-width: 400px;
+  height: 200px;
 }
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  height: calc((100% - 30px) / 2) !important;
+  height: calc(100% / 2) !important;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;

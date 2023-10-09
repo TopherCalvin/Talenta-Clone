@@ -8,7 +8,7 @@ import moment from "moment";
 export default function Attendance() {
   return (
     <Flex className="w-full justify-center bg-[#a61c1c] text-[#f1ffff] p-5">
-      <Flex className="w-full max-w-[500px] flex-col gap-3">
+      <Flex className="w-full max-w-[400px] flex-col gap-3">
         <Box>Good day,</Box>
         <Box>(name)</Box>
         <Flex>Don't miss your attendance today</Flex>

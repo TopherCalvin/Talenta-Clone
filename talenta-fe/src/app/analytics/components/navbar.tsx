@@ -8,24 +8,29 @@ import { VscAccount } from "react-icons/vsc";
 
 export default function Navbar() {
   return (
-    <Flex className="w-full fixed bottom-0 justify-center">
-      <Flex w={"100%"} maxW={"500px"} justifyContent={"space-between"}>
-        <Flex className="flex-col items-center text-lg p-2 w-full max-w-[100px] text-[#7b7c7d] hover:text-red-700">
-          <Icon as={RiHome2Fill} /> Home
+    <Flex className="w-full fixed bottom-0 justify-center bg-[#f2f2f3ff]">
+      <Flex
+        w={"100%"}
+        maxW={"400px"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <Flex className="flex-col items-center text-xs sm:text-lg p-2 text-[#7b7c7d] hover:text-red-700">
+          <Icon as={RiHome2Fill} className="text-lg" /> Home
         </Flex>
-        <Flex className="flex-col items-center text-lg p-2 w-full max-w-[100px] text-[#7b7c7d] hover:text-red-700">
-          <Icon as={FaUsers} /> Employee
+        <Flex className="flex-col items-center text-xs sm:text-lg p-2 text-[#7b7c7d] hover:text-red-700">
+          <Icon as={FaUsers} className="text-lg" /> Employee
         </Flex>
-        <Flex className="flex-col items-center text-lg p-2 w-full max-w-[100px] text-[#7b7c7d] hover:text-red-700">
-          <Icon as={HiClipboardList} />
+        <Flex className="flex-col items-center text-xs sm:text-lg p-2 text-[#7b7c7d] hover:text-red-700">
+          <Icon as={HiClipboardList} className="text-lg" />
           Request
         </Flex>
-        <Flex className="flex-col items-center text-lg p-2 w-full max-w-[100px] text-[#7b7c7d] hover:text-red-700">
-          <Icon as={HiInbox} />
+        <Flex className="flex-col items-center text-xs sm:text-lg p-2 text-[#7b7c7d] hover:text-red-700">
+          <Icon as={HiInbox} className="text-lg" />
           Inbox
         </Flex>
-        <Flex className="flex-col items-center text-lg p-2 w-full max-w-[100px] text-[#7b7c7d] hover:text-red-700">
-          <Icon as={VscAccount} />
+        <Flex className="flex-col items-center text-xs sm:text-lg p-2 text-[#7b7c7d] hover:text-red-700">
+          <Icon as={VscAccount} className="text-lg" />
           Account
         </Flex>
       </Flex>
