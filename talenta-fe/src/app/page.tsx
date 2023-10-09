@@ -12,12 +12,12 @@ import Link from "next/link";
 export default function Home() {
   const session = useSession();
   const [display, setDisplay] = useState(true);
-  // useEffect(() => {
-  //   if (!session.data) redirect("/login");
-  // }, []);
+  useEffect(() => {
+    if (!session.data) redirect("/login");
+  }, []);
   return (
     <main>
-      <Attendance />
+      <Attendance name={session.data?.user?.name} />
       <Facility />
       <Flex className="w-full justify-center">
         <Flex
@@ -38,9 +38,7 @@ export default function Home() {
         <Flex className="w-full max-w-[400px] flex-col items-center gap-3">
           <Flex className="w-full justify-between p-3">
             <Box className="font-bold">Announcement</Box>
-            <Link href={"/"} className="text-blue">
-              View All
-            </Link>
+            <Link href={"/"}>View All</Link>
           </Flex>
           <Flex className="w-full flex-col items-center">
             <Box className="font-bold text-sm">No anouncement yet</Box>
@@ -50,9 +48,7 @@ export default function Home() {
         <Flex className="w-full max-w-[400px] flex-col items-center gap-3">
           <Flex className="w-full justify-between p-3">
             <Box className="font-bold">Tasks</Box>
-            <Link href={"/"} color="#7a98ca">
-              View All
-            </Link>
+            <Link href={"/"}>View All</Link>
           </Flex>
           <Flex className="w-full flex-col items-center">
             <Box className="font-bold  text-sm">No task</Box>
@@ -62,9 +58,7 @@ export default function Home() {
         <Flex className="w-full max-w-[400px] flex-col items-center gap-3">
           <Flex className="w-full justify-between p-3">
             <Box className="font-bold">Timesheet</Box>
-            <Link href={"/"} color="#7a98ca">
-              Go to Time Tracker
-            </Link>
+            <Link href={"/"}>Go to Time Tracker</Link>
           </Flex>
           <Flex className="w-full flex-col items-center">
             <Box className="font-bold text-sm">No timesheet</Box>

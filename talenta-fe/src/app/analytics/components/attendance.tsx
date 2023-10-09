@@ -4,13 +4,15 @@ import { BiNotepad } from "react-icons/bi";
 import { BsBoxArrowLeft, BsBoxArrowInRight } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
 import moment from "moment";
-
-export default function Attendance() {
+interface props {
+  name?: string | null;
+}
+export default function Attendance(props: props) {
   return (
     <Flex className="w-full justify-center bg-[#a61c1c] text-[#f1ffff] p-5">
       <Flex className="w-full max-w-[400px] flex-col gap-3">
         <Box>Good day,</Box>
-        <Box>(name)</Box>
+        <Box>{props.name}</Box>
         <Flex>Don't miss your attendance today</Flex>
         <Flex className="bg-[#f1ffff] text-black rounded-md flex-col">
           <Flex className="flex-col p-2">
